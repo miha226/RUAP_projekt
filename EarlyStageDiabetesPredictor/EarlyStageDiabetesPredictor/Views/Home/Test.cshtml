@@ -1,0 +1,166 @@
+﻿@model EarlyStageDiabetesPredictor.Models.Person
+
+@{
+    ViewBag.Title = "Test";
+}
+
+<h2 class="text-center">Early stage diabetes predictor</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="row">
+    <div class="form-group justify-content-center">
+        @Html.LabelFor(model => model.age, htmlAttributes: new { @class = "control-label" })
+        <div>
+            @Html.EditorFor(model => model.age, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.age, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-md-6 text-center">
+        @Html.LabelFor(model => model.gender, htmlAttributes: new { @class = "col-form-label col-auto" })
+        <div class="form-check-label">
+            @Html.RadioButton("Gender", "Male", new { @checked = "checked" })Male
+            @Html.RadioButton("Gender", "Female")Female
+        </div>
+    </div>
+    </div>
+    <div class="form-row text-center">
+        <div class="form-group col-md-6">
+            @Html.LabelFor(model => model.Polyuria, htmlAttributes: new { @class = "control-label col-auto" })
+            <div>
+                @Html.RadioButton("Polyuria", "Yes")Yes
+                @Html.RadioButton("Polyuria", "No", new { @checked = "checked" })No
+            </div>
+        </div>
+
+        <div class="form-group col-md-6">
+            @Html.LabelFor(model => model.Polydipsia, htmlAttributes: new { @class = "control-label col-auto" })
+            <div>
+                @Html.RadioButton("Polydipsia", "Yes")Yes
+                @Html.RadioButton("Polydipsia", "No", new { @checked = "checked" })No
+            </div>
+        </div>
+    </div>
+    <div class="form-row text-center">
+        <div class="form-group col-md-6">
+            @Html.LabelFor(model => model.suddenWeightLoss, htmlAttributes: new { @class = "control-label col-auto" })
+            <div>
+                @Html.RadioButton("suddenWeightLoss", "Yes")Yes
+                @Html.RadioButton("suddenWeightLoss", "No", new { @checked = "checked" })No
+            </div>
+        </div>
+
+        <div class="form-group col-md-6">
+            @Html.LabelFor(model => model.weakness, htmlAttributes: new { @class = "control-label col-auto" })
+            <div>
+                @Html.RadioButton("weakness", "Yes")Yes
+                @Html.RadioButton("weakness", "No", new { @checked = "checked" })No
+            </div>
+        </div>
+    </div>
+    <div class="form-row text-center">
+        <div class="form-group col-md-6">
+            @Html.LabelFor(model => model.Polyphagia, htmlAttributes: new { @class = "control-label col-auto" })
+            <div>
+                @Html.RadioButton("Polyphagia", "Yes")Yes
+                @Html.RadioButton("Polyphagia", "No", new { @checked = "checked" })No
+            </div>
+        </div>
+
+        <div class="form-group col-md-6">
+            @Html.LabelFor(model => model.genitalThrush, htmlAttributes: new { @class = "control-label col-auto" })
+            <div>
+                @Html.RadioButton("genitalThrush", "Yes")Yes
+                @Html.RadioButton("genitalThrush", "No", new { @checked = "checked" })No
+            </div>
+        </div>
+    </div>
+    <div class="form-row text-center">
+        <div class="form-group col-md-6">
+            @Html.LabelFor(model => model.visualBlurring, htmlAttributes: new { @class = "col-form-label col-auto" })
+            <div>
+                @Html.RadioButton("visualBlurring", "Yes")Yes
+                @Html.RadioButton("visualBlurring", "No", new { @checked = "checked" })No
+            </div>
+        </div>
+
+        <div class="form-group col-md-6">
+            @Html.LabelFor(model => model.itching, htmlAttributes: new { @class = "control-label col-auto" })
+            <div>
+                @Html.RadioButton("itching", "Yes")Yes
+                @Html.RadioButton("itching", "No", new { @checked = "checked" })No
+            </div>
+        </div>
+    </div>
+    <div class="form-row text-center">
+        <div class="form-group col-md-6">
+            @Html.LabelFor(model => model.irritability, htmlAttributes: new { @class = "control-label col-auto" })
+            <div>
+                @Html.RadioButton("irritability", "Yes")Yes
+                @Html.RadioButton("irritability", "No", new { @checked = "checked" })No
+            </div>
+        </div>
+
+        <div class="form-group col-md-6">
+            @Html.LabelFor(model => model.delayedHealing, htmlAttributes: new { @class = "control-label col-auto" })
+            <div>
+                @Html.RadioButton("delayedHealing", "Yes")Yes
+                @Html.RadioButton("delayedHealing", "No", new { @checked = "checked" })No
+            </div>
+        </div>
+    </div>
+    <div class="form-row text-center">
+        <div class="form-group col-md-6">
+            @Html.LabelFor(model => model.partialParesis, htmlAttributes: new { @class = "control-label col-auto" })
+            <div>
+                @Html.RadioButton("partialParesis", "Yes")Yes
+                @Html.RadioButton("partialParesis", "No", new { @checked = "checked" })No
+            </div>
+        </div>
+
+        <div class="form-group col-md-6">
+            @Html.LabelFor(model => model.muscleStiffness, htmlAttributes: new { @class = "control-label col-auto" })
+            <div>
+                @Html.RadioButton("muscleStiffness", "Yes")Yes
+                @Html.RadioButton("muscleStiffness", "No", new { @checked = "checked" })No
+            </div>
+        </div>
+    </div>
+    <div class="form-row text-center">
+        <div class="form-group col-md-6">
+            @Html.LabelFor(model => model.alopecia, htmlAttributes: new { @class = "control-label col-auto" })
+            <div>
+                @Html.RadioButton("alopecia", "Yes")Yes
+                @Html.RadioButton("alopecia", "No", new { @checked = "checked" })No
+            </div>
+        </div>
+
+        <div class="form-group col-md-6">
+            @Html.LabelFor(model => model.obesity, htmlAttributes: new { @class = "control-label col-auto" })
+            <div>
+                @Html.RadioButton("obesity", "Yes")Yes
+                @Html.RadioButton("obesity", "No", new { @checked = "checked" })No
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group text-center">
+        <div class="col-md-12">
+            <input type="submit" value="Test" class="btn btn-default" />
+        </div>
+    </div>
+
+</div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

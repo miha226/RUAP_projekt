@@ -1,0 +1,129 @@
+﻿@model IEnumerable<EarlyStageDiabetesPredictor.Models.Person>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Polyuria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Polydipsia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.suddenWeightLoss)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.weakness)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Polyphagia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.genitalThrush)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.visualBlurring)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.itching)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.irritability)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.delayedHealing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.partialParesis)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.muscleStiffness)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.alopecia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.obesity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.outcome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.percentage)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.age)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Polyuria)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Polydipsia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.suddenWeightLoss)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.weakness)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Polyphagia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.genitalThrush)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.visualBlurring)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.itching)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.irritability)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.delayedHealing)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.partialParesis)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.muscleStiffness)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.alopecia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.obesity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.outcome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.percentage)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

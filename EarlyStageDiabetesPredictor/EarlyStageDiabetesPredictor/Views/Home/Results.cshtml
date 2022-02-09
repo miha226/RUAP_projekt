@@ -1,0 +1,55 @@
+﻿@model IEnumerable<EarlyStageDiabetesPredictor.Models.Person>
+
+@{
+    ViewBag.Title = "Results";
+}
+
+<h2>Results</h2>
+
+<p>
+    @Html.ActionLink("Add new test", "Test")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Id
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.outcome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.percentage)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach ((var item, int i) in Model.Select((value,i)=>(value,i))) {
+    <tr>
+        <td>
+            @i.ToString()
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.age)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.outcome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.percentage)
+        </td>
+        <td>
+            @Html.ActionLink("Delete", "Delete", "Home", new { i},null)
+        </td>
+    </tr>
+}
+
+</table>
