@@ -35,7 +35,6 @@ namespace EarlyStageDiabetesPredictor.Controllers
                 DiabetesResults.getDiabetesResultsInstance().Results.Add(result);
                 return RedirectToAction("Results");
             }
-            
             ViewBag.Title = "Test for diabetes";
             return View();
         }
@@ -46,13 +45,8 @@ namespace EarlyStageDiabetesPredictor.Controllers
             return RedirectToAction("Results");
         }
 
-        public ActionResult Result()
-        {
-            return PartialView("Result",DiabetesResults.getDiabetesResultsInstance().Results.Last());
-        }
         public ActionResult Results()
-        {
-            
+        {       
             ViewBag.Title = "Diabetes results";
             return View(DiabetesResults.getDiabetesResultsInstance().Results);
         }
